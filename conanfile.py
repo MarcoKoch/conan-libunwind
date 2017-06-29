@@ -1,5 +1,6 @@
 from conans import ConanFile, AutoToolsBuildEnvironment, tools
 import os
+import platform
 
 
 class LibunwindConan(ConanFile):
@@ -93,7 +94,14 @@ enable_minidebuginfo=False
         
         with tools.chdir(self.source_archive_name):
             self.output.info("Configuring libunwind")
-            build_env.configure(args=configure_options)
+                 
+            # Conan does not consider cross-building from x86_64 to x86 as such.
+            # This causes trouble, though, as the configure script screws up
+            # if it has no exact target specified in such situations.
+            if platform.machine() == "x86_64" and self.settings.arch == "x86":
+                build_env.configure(args=configure_options, target="i686")
+            else:
+                build_env.configure(args=configure_options)
             
             self.output.info("Building libunwind")
             build_env.make()
