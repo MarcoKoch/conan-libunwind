@@ -13,7 +13,7 @@ fi
 # Only upload packages from the master or release branches.
 # This prevents us from spamming the 'testing' repo with packages from
 # feature branches.
-if ! [[ $TRAVIS_PULL_REQUEST = "false" && $TRAVIS_BRANCH =~ (^master$)|(^v.+) ]]
+if ! [[ $TRAVIS_PULL_REQUEST = "false" && $TRAVIS_BRANCH =~ (^master$)|(^v.+) ]] ; then
     unset CONAN_UPLOAD
 fi
 
