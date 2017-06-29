@@ -23,7 +23,7 @@ environment:
 
 
 install:
-  - ./.appveyor/install.cmd
+  - .appveyor/install.cmd
 
 test_script:
-  - ./.appveyor/run.cmd
+  - .appveyor/run.cmd
