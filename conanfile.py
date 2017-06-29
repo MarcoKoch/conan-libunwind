@@ -107,7 +107,7 @@ enable_minidebuginfo=False
             build_env.make()
             
             self.output.info("Doing a local install for packaging")
-            build_env.make(["install", "prefix=%s" % os.path.join(os.getcwd(), "..", self.local_install_path)])
+            build_env.make(["install", "prefix=%s" % os.path.join(os.getcwd(), os.pardir, self.local_install_path)])
         
 
     def package(self):
