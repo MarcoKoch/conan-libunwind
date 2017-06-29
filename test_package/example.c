@@ -14,5 +14,5 @@ int main() {
     char buf[256];
     unw_get_proc_name(&cursor, buf, sizeof(buf), NULL);
     
-    printf(buf);
+    puts(buf);
 }
