@@ -9,7 +9,7 @@ This is *not* the original libunwind source code.
 The original source code is downloaded automatically
 from the official libunwind website
 during the package build process.
-Please visit the original project's website at [http://www.nongnu.org/libunwind].
+Please visit the original project's website at [http://www.nongnu.org/libunwind]().
 
 
 ## Hosted Packages
@@ -20,23 +20,22 @@ To use the repository, add it to your conan remotes like this:
 
     conan remote add ocean-conan https://bintray.com/marcokoch/ocean-conan
 
-There are two channels of this package recipe
-which can be used in 'conanfile.txt' or 'conanfile.py':
+The packages are available in two channels:
 
-`libunwind/1.2.1@marcokoch/stable`
-: This channel contains the latest stable package release,
-  built from the
-  [v1.2.1](https://github.com/MarcoKoch/conan-libunwind/tree/v1.2.1)
-  branch of this repository.
-  Note that 'stable' refers to the packaging only. The package is always built
-  from stable releases of libunwind.
+`libunwind/1.2.1@marcokoch/stable`:
+This channel contains the latest stable package release,
+built from the
+[v1.2.1](https://github.com/MarcoKoch/conan-libunwind/tree/v1.2.1)
+branch of this repository.
+Note that 'stable' refers to the packaging only. The package is always built
+from stable releases of libunwind.
 
-`libunwind/1.2.1@marcokoch/testing`
-: This channel provides recent development builds from the
-  [master](https://github.com/MarcoKoch/conan-libunwind/tree/master)
-  branch of this repository.
-  Feedback on these builds is highly welcome.
-  They may be buggy, though.
+`libunwind/1.2.1@marcokoch/testing`:
+This channel provides recent development builds from the
+[master](https://github.com/MarcoKoch/conan-libunwind/tree/master)
+branch of this repository.
+Feedback on these builds is highly welcome.
+They may be buggy, though.
 
 To use libunwind in your project,
 use the following lines in your `conanfile.txt`:
@@ -72,10 +71,10 @@ The package supports the following options:
 ## License
 
 This package recipe is provided under the 3-Clause BSD license.
-See file [LICENSE] for further information.
+See file [LICENSE]() for further information.
 
 The original libunwind project is provided under the X11 license.
-Please see [https://savannah.nongnu.org/projects/libunwind].
+Please see [https://savannah.nongnu.org/projects/libunwind]().
 
 
 # Contributing
@@ -84,4 +83,4 @@ Feedback and pull requests are highly appreciated.
 If you have any questions, feel free to ask in the issue tracker.
 
 For contributions to the original libunwind project,
-the author has set up a GitHub mirror at [https://github.com/libunwind/libunwind].
+the author has set up a GitHub mirror at [https://github.com/libunwind/libunwind]().
