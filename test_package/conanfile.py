@@ -2,7 +2,7 @@ from conans import ConanFile, CMake
 import os
 
 
-package_version = "1.2"
+package_version = "1.2.1"
 channel = os.getenv("CONAN_CHANNEL", "testing")
 username = os.getenv("CONAN_USERNAME", "marcokoch")
 
