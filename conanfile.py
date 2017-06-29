@@ -98,10 +98,14 @@ enable_minidebuginfo=False
             # Conan does not consider cross-building from x86_64 to x86 as such.
             # This causes trouble, though, as the configure script screws up
             # if it has no exact target specified in such situations.
+            # Also, there seems to be a bug in conan, which causes the build to
+            # fail on windows if no explicit configuration path is specified
+            # (conan calls the configure script with ./configure)
             if platform.machine() == "x86_64" and self.settings.arch == "x86":
-                build_env.configure(args=configure_options, target="i686")
+                build_env.configure(args=configure_options, target="i686",
+                    configure_dir=os.getcwd())
             else:
-                build_env.configure(args=configure_options)
+                build_env.configure(args=configure_options, configure_dir=os.getcwd())
             
             self.output.info("Building libunwind")
             build_env.make()
