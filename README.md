@@ -18,7 +18,7 @@ Recipes and binary packages built from this repository are hosted at the
 [Ocean Conan Package Repository](https://bintray.com/marcokoch/ocean-conan).
 To use the repository, add it to your conan remotes like this:
 
-    conan remote add ocean-conan https://bintray.com/marcokoch/ocean-conan
+    conan remote add ocean-conan https://api.bintray.com/conan/marcokoch/ocean-conan
 
 The packages are available in two channels:
 
