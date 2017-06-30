@@ -112,16 +112,16 @@ enable_minidebuginfo=False
             
             self.output.info("Doing a local install for packaging")
             build_env.make(["install", "prefix=%s" % os.path.join(os.getcwd(), os.pardir, self.local_install_path)])
-        
-        # If cross-building, the libraries are installed with a suffix denoting
-        # the target platform. We don't want that.
-        if tools.cross_building(self.settings) or \
-                (platform.machine() == "x86_64" and self.settings.arch =="x86"):
-            with tools.chdir(os.path.join(self.local_install_path, "lib")):
-                for lib in glob("*-%s.*" % self.settings.arch):
-                    new_lib = re.sub("^(.+)-%s\\.(.+)$" % self.settings.arch, "\\1.\\2", lib)
-                    self.output.info("Renaming %s to %s" % (lib, new_lib))
-                    os.rename(lib, new_lib)
+            
+        # HACK: There seems to be a bug in libunwind's build system that creates a
+        # broken symlink libunwind-generic.a when it is actually supposed to
+        # create shared libraries. Conan drops out with an error when it tries
+        # to copy that link. As a simple fix, we delete the link here.
+        if self.options.shared:
+            broken_link = os.path.join(self.local_install_path, "lib", "libunwind-generic.a")
+            if os.path.islink(broken_link):
+                self.output.info("HACK: Removing broken symlink %s" % broken_link)
+                os.unlink(broken_link)
         
 
     def package(self):
