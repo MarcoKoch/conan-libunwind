@@ -9,7 +9,7 @@ This is *not* the original libunwind source code.
 The original source code is downloaded automatically
 from the official libunwind website
 during the package build process.
-Please visit the original project's website at [http://www.nongnu.org/libunwind]().
+Please visit the original project's website at <http://www.nongnu.org/libunwind>.
 
 
 ## Hosted Packages
@@ -71,16 +71,16 @@ The package supports the following options:
 ## License
 
 This package recipe is provided under the 3-Clause BSD license.
-See file [LICENSE]() for further information.
+See file [LICENSE](LICENSE) for further information.
 
 The original libunwind project is provided under the X11 license.
-Please see [https://savannah.nongnu.org/projects/libunwind]().
+Please see <https://savannah.nongnu.org/projects/libunwind>.
 
 
-# Contributing
+## Contributing
 
 Feedback and pull requests are highly appreciated.
 If you have any questions, feel free to ask in the issue tracker.
 
 For contributions to the original libunwind project,
-the author has set up a GitHub mirror at [https://github.com/libunwind/libunwind]().
+the author has set up a GitHub mirror at <https://github.com/libunwind/libunwind>.
