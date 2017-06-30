@@ -120,6 +120,7 @@ enable_minidebuginfo=False
             with tools.chdir(os.path.join(self.local_install_path, "lib")):
                 for lib in glob("*-%s.*" % self.settings.arch):
                     new_lib_name = re.sub("^(.+)-%s\.(.+)$" % self.settings.arch, "\1.\2", lib)
+                    self.output.info("Renaming %s to %s" % (lib, new_lib_name))
                     os.rename(lib, new_lib_name)
         
 
