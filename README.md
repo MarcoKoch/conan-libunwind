@@ -59,7 +59,6 @@ The package supports the following options:
 | `enable_coredump`            | `True`, `False` | `False` | Include the unwind-coredump library               | `--enable-coredump`                          |
 | `enable_ptrace`              | `True`, `False` | `False` | Include the unwind-ptrace library                 | `--enable-ptrace`                            |
 | `enable_setjmp`              | `True`, `False` | `False` | Include the unwind-setjmp library                 | `--enable-setjmp`                            |
-| `enable_documentation`       | `True`, `False` | `False` | Include the unwind manpages                       | `--enable-documentation`                     |
 | `enable_cxx_exceptions`      | `True`, `False` | `False` | Use libunwind to handle C++ exceptions            | `--enable-cxx-exceptions`                    |
 | `enable_debugframe`          | `True`, `False` | `False` | Load the ".debug_frame" section if available      | `--enable-debugframe`                        |
 | `enable_block_signals`       | `True`, `False` | `False` | Block signals before performing mutext operations | `--enable-block-signals`                     |
