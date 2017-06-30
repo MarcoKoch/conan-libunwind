@@ -1,4 +1,4 @@
-from conans import ConanFile, CMake
+from conans import ConanFile, CMake, tools
 import os
 
 
@@ -30,7 +30,9 @@ class LibunwindTestConan(ConanFile):
 
 
     def test(self):
-        cmake = CMake(self)
-        
-        self.output.info("Running tests")
-        cmake.test()
+        if not tools.cross_building(self.settings):
+            cmake = CMake(self)            
+            self.output.info("Running tests")
+            cmake.test()
+        else:
+            self.output.info("Skipping tests due to cross-build")
