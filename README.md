@@ -82,5 +82,5 @@ Please see <https://savannah.nongnu.org/projects/libunwind>.
 Feedback and pull requests are highly appreciated.
 If you have any questions, feel free to ask in the issue tracker.
 
-For contributions to the original libunwind project,
-the author has set up a GitHub mirror at <https://github.com/libunwind/libunwind>.
+To contribute to the original libunwind project,
+please interact with the official GitHub mirror at <https://github.com/libunwind/libunwind>.
