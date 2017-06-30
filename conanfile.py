@@ -125,7 +125,7 @@ enable_minidebuginfo=False
         
 
     def package(self):
-        self.copy("*", dst=".", src=self.local_install_path)
+        self.copy("*", dst=".", src=self.local_install_path, links=True)
         self.copy("COPYING", dst="licenses", src=self.source_archive_name)
         
         # libunwind does not install the libunwind header when cross-building.
