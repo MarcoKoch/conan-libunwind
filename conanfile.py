@@ -1,6 +1,6 @@
 from conans import ConanFile, AutoToolsBuildEnvironment, tools
-import os
-import platform
+from glob import glob
+import os, platform, re
 
 
 class LibunwindConan(ConanFile):
@@ -112,6 +112,15 @@ enable_minidebuginfo=False
             
             self.output.info("Doing a local install for packaging")
             build_env.make(["install", "prefix=%s" % os.path.join(os.getcwd(), os.pardir, self.local_install_path)])
+        
+        # If cross-building, the libraries are installed with a suffix denoting
+        # the target platform. We don't want that.
+        if tools.cross_building(self.settings) or \
+                (platform.machine() == "x86_64" and self.settings.arch =="x86"):
+            with tools.chdir(os.path.join(self.local_install_path, "lib")):
+                for lib in glob("*-%s.*" % self.settings.arch):
+                    new_lib_name = re.sub("^(.+)-%s\.(.+)$" % self.settings.arch, "\1.\2", lib)
+                    os.rename(lib, new_lib_name)
         
 
     def package(self):
