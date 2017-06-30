@@ -1,7 +1,7 @@
 
 env:
    global:
-     - CONAN_REFERENCE: "libunwind/1.2"
+     - CONAN_REFERENCE: "libunwind/1.2.1"
      - CONAN_USERNAME: "marcokoch"
      - CONAN_LOGIN_USERNAME: "marcokoch"
      - CONAN_CHANNEL: "testing"
