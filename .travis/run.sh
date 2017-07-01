@@ -11,10 +11,10 @@ set -x
 #    pyenv activate conan
 #fi
 
-# Only upload packages from the master or release branches.
+# Only upload packages from the master or stable release branches.
 # This prevents us from spamming the 'testing' repo with packages from
 # feature branches.
-if ! [[ $TRAVIS_PULL_REQUEST = "false" && $TRAVIS_BRANCH =~ (^master$)|(^v.+) ]] ; then
+if ! [[ $TRAVIS_PULL_REQUEST = "false" && $TRAVIS_BRANCH =~ (^master$)|(^v[0-9]+(\.[0-9]+)*-stable$) ]] ; then
     unset CONAN_UPLOAD
 fi
 
