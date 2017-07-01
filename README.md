@@ -71,6 +71,11 @@ the [issue tracker].
 Unfortunately, there is no support for Windows and/or OS X at the moment.
 
 
+## Compiler support
+
+This package can both be compiled and used with GCC and Clang.
+
+
 ## Package Options
 
 The package supports the following options:
