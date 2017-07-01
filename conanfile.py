@@ -13,7 +13,15 @@ class LibunwindConan(ConanFile):
 ""x86-64, and PPC64. Partial support for HP-UX and Linux on PA-RISC also exists."
     settings = {
 "os" : ["Linux", "FreeBSD"],
-"compiler": {"gcc" : None, "clang": None},
+"compiler": {
+    "gcc" : {
+        "version": ["5.1", "5.2", "5.3", "5.4", "6.1", "6.2", "6.3"],
+        "libcxx": None,
+        "threads": None,
+        "exception": None
+    },
+    "clang": None
+},
 "build_type": None,
 "arch": ["x86", "x86_64", "ppc64le", "ppc64", "armv6", "armv7", "armv7hf", "armv8", "mips", "mips64"]}
     options = {
