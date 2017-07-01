@@ -48,17 +48,6 @@ enable_minidebuginfo=False
     local_install_path = "install"
 
     
-    def _get_build_environment_str(self):
-        if tools.os_info.is_linux:
-            return "%s-unknown-linux" % platform.machine()
-        elif tools.os_info.is_windows:
-            return "%s-windows" % platform.machine()
-        elif tools.os_info.is_macos:
-            return "%s-macos" % platform.machine()
-        else:
-            return platform.machine()
-    
-    
     def _get_target_environment_str(self):
         if self.settings.arch == "x86":
             arch = "i686"
@@ -76,11 +65,6 @@ enable_minidebuginfo=False
             
             
     def configure(self):
-        if self.settings.os != "Linux" and self.settings.os != "FreeBSD":
-            raise Exception( \
-                "Your chosen operating system (%s) is not supported by libunwind" \
-                % self.settings.os) 
-                
         if not re.search("^mips(64)?$", "%s" % self.settings.arch) \
                 and not ((self.settings.os == "Linux" \
                         and re.search("^(x86(_64)?)|(armv[0-9](hf)?)|(ppc64(le)?)$", "%s" % self.settings.arch)) \
@@ -138,29 +122,10 @@ enable_minidebuginfo=False
     
         if self.options.enable_minidebuginfo:
             configure_options.append("--enable-minidebuginfo")
-            
-        # Conan does not consider cross-building from x86_64 to x86 as such.
-        # This causes trouble though, as the configure script screws up
-        # if it has no exact host specified in such situations.
-        configure_options.append("--build=%s" % self._get_build_environment_str())
-        configure_options.append("--host=%s" % self._get_target_environment_str())
-        configure_options.append("--target=%s" % self._get_target_environment_str())
-        
-        # HACK: If crosscompiling from x86_64 to x86, libunwind's configure script
-        # tries to use the 64 bit compiler even though host and target platform
-        # are specifed correctly. We manually add the -m32 flag to the CFLAGS
-        # to enforce the correct compiler.
-        if self.settings.arch == "x86" and (self.settings.compiler == "gcc" or \
-                self.settings.compiler == "clang" or self.settings.compiler == "apple-clang"):
-            configure_options.append("CFLAGS=-m32")
         
         with tools.chdir(self.source_archive_name):
             self.output.info("Configuring libunwind")
-            
-            # HACK: We can't use build_env.configure() here as that neither works on
-            # Windows, nor does it play nice with libunwind's configure script
-            # in cross bulding setups. Instead we call the configure script directly.
-            self.run(os.path.join(os.path.curdir, "configure %s" % " ".join(configure_options)))
+            build_env.configure(args=configure_options, host=self._get_target_environment_str())
             
             self.output.info("Building libunwind")
             build_env.make()
