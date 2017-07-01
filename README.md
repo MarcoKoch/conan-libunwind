@@ -44,7 +44,7 @@ use the following lines in your `conanfile.txt`:
     [requires]
     libunwind/1.2.1@marcokoch/stable
 
-Or in your `conanfile.py`
+Or in your `conanfile.py`:
 
     class MyProject(ConanFile):
         requires = "libunwind/1.2.1@marcokoch/stable"
