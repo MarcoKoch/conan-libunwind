@@ -1,5 +1,5 @@
 from conans import ConanFile, AutoToolsBuildEnvironment, tools
-import os, platform
+import os, platform, re
 
 
 class LibunwindConan(ConanFile):
@@ -11,7 +11,11 @@ class LibunwindConan(ConanFile):
     description = "A complete open-source implementation of the libunwind API "" \
 ""currently exists for IA-64 Linux and is under development for Linux on x86, "" \
 ""x86-64, and PPC64. Partial support for HP-UX and Linux on PA-RISC also exists."
-    settings = "os", "compiler", "build_type", "arch"
+    settings = {
+"os" : ["Linux", "FreeBSD"],
+"compiler": {"gcc" : None, "clang": None},
+"build_type": None,
+"arch": ["x86", "x86_64", "ppc64le", "ppc64", "armv6", "armv7", "armv7hf", "armv8", "mips", "mips64"]}
     options = {
 "shared": [True, False],
 "enable_coredump": [True, False],
@@ -69,6 +73,22 @@ enable_minidebuginfo=False
             return "%s-macos" % arch
         else:
             return arch
+            
+            
+    def configure(self):
+        if self.settings.os != "Linux" and self.settings.os != "FreeBSD":
+            raise Exception( \
+                "Your chosen operating system (%s) is not supported by libunwind" \
+                % self.settings.os) 
+                
+        if not re.search("^mips(64)?$", "%s" % self.settings.arch) \
+                and not ((self.settings.os == "Linux" \
+                        and re.search("^(x86(_64)?)|(armv[0-9](hf)?)|(ppc64(le)?)$", "%s" % self.settings.arch)) \
+                    or (self.settings.os == "FreeBSD" \
+                        and re.search("^x86(_64)?$", "%s" % self.settings.arch))):
+            raise Exception( \
+                "Your chosen architecture (%s) is not supported by libunwind on this operating system (%s)" \
+                    % (self.settings.arch, self.settings.os))
 
 
     def source(self):

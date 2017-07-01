@@ -1,15 +1,16 @@
 # libunwind Package Recipe for the conan Package Manager
 
-This is an effort to make [libunwind](http://www.nongnu.org/libunwind/)
-available through the [conan Package Manager](https://conan.io/).
+This is an effort to make [libunwind]
+available through the [conan Package Manager].
 
 **NOTE:**
 This repository only contains the source code of the conan package recipe.
-This is *not* the original libunwind source code.
+This is *not* the original libunwind source code
+and this repository is not maintained by the libunwind developer(s).
 The original source code is downloaded automatically
 from the official libunwind website
 during the package build process.
-Please visit the original project's website at <http://www.nongnu.org/libunwind>.
+Please visit libunwind's website at <http://www.nongnu.org/libunwind>.
 
 
 ## Hosted Packages
@@ -47,6 +48,27 @@ Or in your `conanfile.py`
 
     class MyProject(ConanFile):
         requires = "libunwind/1.2.1@marcokoch/stable"
+        
+        
+## Platform support
+
+This recipe should build for all platforms
+that are supported by both libunwind and conan.
+At the moment, these are:
+
+* Linux (x86)
+* Linux (x86_64)
+* Linux (ARM)
+* Linux (PPC64)
+* MIPS
+* FreeBSD (x86)
+* FreeBSD (x86_64)
+
+If a package build breaks for any of those platforms, please report a bug on
+the [issue tracker].
+
+**NOTE:**
+Unfortunately, there is no support for Windows and/or OS X at the moment.
 
 
 ## Package Options
@@ -79,7 +101,13 @@ Please see <https://savannah.nongnu.org/projects/libunwind>.
 ## Contributing
 
 Feedback and pull requests are highly appreciated.
-If you have any questions, feel free to ask in the issue tracker.
+If you have any questions, feel free to ask in the [issue tracker].
 
 To contribute to the original libunwind project,
 please interact with the official GitHub mirror at <https://github.com/libunwind/libunwind>.
+
+
+[conan package manager]: https://conan.io/
+[libunwind]: http://www.nongnu.org/libunwind/
+[issue tracker]: https://github.com/MarcoKoch/conan-libunwind/issues
+[libunwind README]: https://github.com/libunwind/libunwind/blob/master/README
