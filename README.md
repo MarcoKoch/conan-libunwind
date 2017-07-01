@@ -3,6 +3,9 @@
 This is an effort to make [libunwind]
 available through the [conan Package Manager].
 
+[![Build Status](https://travis-ci.org/MarcoKoch/conan-libunwind.svg?branch=master)](https://travis-ci.org/MarcoKoch/conan-libunwind) ([master])  
+[![Build Status](https://travis-ci.org/MarcoKoch/conan-libunwind.svg?branch=v1.2.1)](https://travis-ci.org/MarcoKoch/conan-libunwind) ([v1.2.1])
+
 **NOTE:**
 This repository only contains the source code of the conan package recipe.
 This is *not* the original libunwind source code
@@ -25,15 +28,12 @@ The packages are available in two channels:
 
 `libunwind/1.2.1@marcokoch/stable`:
 This channel contains the latest stable package release,
-built from the
-[v1.2.1](https://github.com/MarcoKoch/conan-libunwind/tree/v1.2.1)
-branch of this repository.
+built from the [v1.2.1] branch of this repository.
 Note that 'stable' refers to the packaging only. The package is always built
 from stable releases of libunwind.
 
 `libunwind/1.2.1@marcokoch/testing`:
-This channel provides recent development builds from the
-[master](https://github.com/MarcoKoch/conan-libunwind/tree/master)
+This channel provides recent development builds from the [master]
 branch of this repository.
 Feedback on these builds is highly welcome.
 They may be buggy, though.
@@ -80,7 +80,7 @@ Unfortunately, there is no support for Windows and/or OS X at the moment.
 
 ## Compiler support
 
-This package can both be compiled and used with
+Packages from this recipe can both be compiled and used with
 
 * GCC versions 5.1, 5.2, 5.3, 5.4, 6.1, 6.2, 6.3
 * Clang versions 3.9, 4.0
@@ -127,3 +127,5 @@ please interact with the official GitHub mirror at <https://github.com/libunwind
 [Ocean Conan Package Repository]: https://bintray.com/marcokoch/ocean-conan
 [issue tracker]: https://github.com/MarcoKoch/conan-libunwind/issues
 [libunwind README]: https://github.com/libunwind/libunwind/blob/master/README
+[v1.2.1]: https://github.com/MarcoKoch/conan-libunwind/tree/v1.2.1
+[master]: https://github.com/MarcoKoch/conan-libunwind/tree/master
