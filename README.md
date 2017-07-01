@@ -15,8 +15,8 @@ Please visit libunwind's website at <http://www.nongnu.org/libunwind>.
 
 ## Hosted Packages
 
-Recipes and binary packages built from this repository are hosted at the
-[Ocean Conan Package Repository](https://bintray.com/marcokoch/ocean-conan).
+Recipes and binary packages built from this repository
+are hosted at the [Ocean Conan Package Repository].
 To use the repository, add it to your conan remotes like this:
 
     conan remote add ocean-conan https://api.bintray.com/conan/marcokoch/ocean-conan
@@ -49,6 +49,13 @@ Or in your `conanfile.py`
     class MyProject(ConanFile):
         requires = "libunwind/1.2.1@marcokoch/stable"
         
+There are binary packages available for the following configurations:
+
+| Operating System | Architectures | Compilers              | `build_type`       | `shared`        |
+|------------------|---------------|------------------------|--------------------|-----------------|
+| Linux            | i686, x86_64  | GCC 5.2, 5.3, 5.4, 6.3 | "Debug", "Release" | `True`, `False` |
+| Linux            | i686, x86_64  | Clang 3.9, 4.0         | "Debug", "Release" | `True`, `False` |
+        
         
 ## Platform support
 
@@ -73,7 +80,10 @@ Unfortunately, there is no support for Windows and/or OS X at the moment.
 
 ## Compiler support
 
-This package can both be compiled and used with GCC and Clang.
+This package can both be compiled and used with
+
+* GCC versions 5.1, 5.2, 5.3, 5.4, 6.1, 6.2, 6.3
+* Clang versions 3.9, 4.0
 
 
 ## Package Options
@@ -114,5 +124,6 @@ please interact with the official GitHub mirror at <https://github.com/libunwind
 
 [conan package manager]: https://conan.io/
 [libunwind]: http://www.nongnu.org/libunwind/
+[Ocean Conan Package Repository]: https://bintray.com/marcokoch/ocean-conan
 [issue tracker]: https://github.com/MarcoKoch/conan-libunwind/issues
 [libunwind README]: https://github.com/libunwind/libunwind/blob/master/README
