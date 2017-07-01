@@ -3,8 +3,9 @@
 This is an effort to make [libunwind]
 available through the [conan Package Manager].
 
-[![Build Status](https://travis-ci.org/MarcoKoch/conan-libunwind.svg?branch=master)](https://travis-ci.org/MarcoKoch/conan-libunwind) ([master])  
-[![Build Status](https://travis-ci.org/MarcoKoch/conan-libunwind.svg?branch=v1.2.1-stable)](https://travis-ci.org/MarcoKoch/conan-libunwind) ([v1.2.1-stable])
+[![Build Status](https://travis-ci.org/MarcoKoch/conan-libunwind.svg?branch=master)](https://travis-ci.org/MarcoKoch/conan-libunwind) ([master], upcoming versions)  
+[![Build Status](https://travis-ci.org/MarcoKoch/conan-libunwind.svg?branch=v1.2.1)](https://travis-ci.org/MarcoKoch/conan-libunwind) ([v1.2.1], development branch)  
+[![Build Status](https://travis-ci.org/MarcoKoch/conan-libunwind.svg?tag=v.1.2.1-0)](https://travis-ci.org/MarcoKoch/conan-libunwind) ([v1.2.1-0], stable release)
 
 **NOTE:**
 This repository only contains the source code of the conan package recipe.
@@ -27,13 +28,13 @@ To use the repository, add it to your conan remotes like this:
 The packages are available in two channels:
 
 `libunwind/1.2.1@marcokoch/stable`:
-This channel contains the latest stable package release,
-built from the [v1.2.1-stable] branch of this repository.
+This channel contains the latest stable package release, built
+from the [v1.2.1-0] tag in this repository.
 Note that 'stable' refers to the packaging only. The package is always built
 from stable releases of libunwind.
 
 `libunwind/1.2.1@marcokoch/testing`:
-This channel provides recent development builds from the [master]
+This channel provides recent development builds from the [v1.2.1]
 branch of this repository.
 Feedback on these builds is highly welcome.
 They may be buggy, though.
@@ -127,5 +128,6 @@ please interact with the official GitHub mirror at <https://github.com/libunwind
 [Ocean Conan Package Repository]: https://bintray.com/marcokoch/ocean-conan
 [issue tracker]: https://github.com/MarcoKoch/conan-libunwind/issues
 [libunwind README]: https://github.com/libunwind/libunwind/blob/master/README
-[v1.2.1-stable]: https://github.com/MarcoKoch/conan-libunwind/tree/v1.2.1-stable
+[v1.2.1]: https://github.com/MarcoKoch/conan-libunwind/tree/v1.2.1
+[v1.2.1-0]: https://github.com/MarcoKoch/conan-libunwind/tree/v1.2.1-0
 [master]: https://github.com/MarcoKoch/conan-libunwind/tree/master
