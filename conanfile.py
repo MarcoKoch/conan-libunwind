@@ -1,5 +1,5 @@
 from conans import ConanFile, AutoToolsBuildEnvironment, tools
-import os, platform, re
+import os, re
 
 
 class LibunwindConan(ConanFile):
