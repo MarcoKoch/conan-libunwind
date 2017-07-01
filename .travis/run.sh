@@ -14,7 +14,7 @@ set -x
 # Only upload packages from the master or stable release branches.
 # This prevents us from spamming the 'testing' repo with packages from
 # feature branches.
-if ! [[ $TRAVIS_PULL_REQUEST = "false" && $TRAVIS_BRANCH =~ (^master$)|(^v[0-9]+(\.[0-9]+)*-stable$) ]] ; then
+if ! [[ $TRAVIS_PULL_REQUEST = "false" && ($TRAVIS_BRANCH = "master" || $TRAVIS_TAG =~ ^v[0-9]+(\.[0-9]+)*-[0-9]+$) ]] ; then
     unset CONAN_UPLOAD
 fi
 
