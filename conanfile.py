@@ -55,13 +55,9 @@ enable_minidebuginfo=False
             arch = self.settings.arch
         
         if self.settings.os == "Linux":
-            return "%s-unknown-linux" % arch
-        elif self.settings.os == "Windows":
-            return "%s-windows" % arch
-        elif self.settings.os == "Macos":
-            return "%s-macos" % arch
-        else:
-            return arch
+            return "%s-linux" % arch
+        elif self.settings.os == "FreeBSD":
+            return "%s-freebsd" % arch
             
             
     def configure(self):
