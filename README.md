@@ -99,8 +99,8 @@ The package supports the following options:
 This package recipe is provided under the 3-Clause BSD license.
 See file [LICENSE](LICENSE) for further information.
 
-The original libunwind project is provided under the X11 license.
-Please see <https://savannah.nongnu.org/projects/libunwind>.
+The original libunwind project is provided under the MIT license.
+Please see <https://github.com/libunwind/libunwind/blob/v1.2-stable/LICENSE>.
 
 
 ## Contributing

@@ -5,7 +5,7 @@ import os, platform, re
 class LibunwindConan(ConanFile):
     name = "libunwind"
     version = "1.2.1"
-    license = "X11"
+    license = "MIT"
     url = "https://github.com/marcokoch/conan-libunwind"
     author = "Marco Koch (marco-koch@t-online.de)"
     description = "A complete open-source implementation of the libunwind API "" \
