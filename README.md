@@ -3,9 +3,8 @@
 This is an effort to make [libunwind]
 available through the [conan Package Manager].
 
-[![Build Status](https://travis-ci.org/MarcoKoch/conan-libunwind.svg?branch=master)](https://travis-ci.org/MarcoKoch/conan-libunwind) ([master], upcoming versions)  
-[![Build Status](https://travis-ci.org/MarcoKoch/conan-libunwind.svg?branch=v1.2.1)](https://travis-ci.org/MarcoKoch/conan-libunwind) ([v1.2.1], development branch)  
-[![Build Status](https://travis-ci.org/MarcoKoch/conan-libunwind.svg?tag=v.1.2.1-0)](https://travis-ci.org/MarcoKoch/conan-libunwind) ([v1.2.1-0], stable release)
+[![Build Status](https://travis-ci.org/MarcoKoch/conan-libunwind.svg?branch=master)](https://travis-ci.org/MarcoKoch/conan-libunwind) ([master], upcoming version)  
+[![Build Status](https://travis-ci.org/MarcoKoch/conan-libunwind.svg?branch=v1.2.1)](https://travis-ci.org/MarcoKoch/conan-libunwind) ([v1.2.1], current version)
 
 **NOTE:**
 This repository only contains the source code of the conan package recipe.
