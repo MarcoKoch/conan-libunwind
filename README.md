@@ -82,8 +82,8 @@ Unfortunately, there is no support for Windows and/or OS X at the moment.
 
 Packages from this recipe can both be compiled and used with
 
-* GCC versions 5.1, 5.2, 5.3, 5.4, 6.1, 6.2, 6.3
-* Clang versions 3.9, 4.0
+* GCC versions 5.1, 5.2, 5.3, 5.4, 6.1, 6.2, 6.3, 7.1
+* Clang versions 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0, 5.0
 
 
 ## Package Options
