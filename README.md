@@ -54,7 +54,7 @@ There are binary packages available for the following configurations:
 | Operating System | Architectures | Compilers              | `build_type`       | `shared`        |
 |------------------|---------------|------------------------|--------------------|-----------------|
 | Linux            | i686, x86_64  | GCC 5.2, 5.3, 5.4, 6.3 | "Debug", "Release" | `True`, `False` |
-| Linux            | i686, x86_64  | Clang 3.9, 4.0         | "Debug", "Release" | `True`, `False` |
+| Linux            | i686, x86_64  | Clang 3.8, 3.9, 4.0    | "Debug", "Release" | `True`, `False` |
         
         
 ## Platform support
