@@ -156,7 +156,7 @@ enable_minidebuginfo=False
 
 
     def package_info(self):
-        self.cpp_info.libs = ["unwind"]
+        self.cpp_info.libs = ["unwind", "unwind-%s" % self.settings.arch]
         
         if self.options.enable_coredump:
             self.cpp_info.libs.append("unwind-coredump")
