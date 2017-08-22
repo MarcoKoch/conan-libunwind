@@ -28,7 +28,7 @@ The packages are available in two channels:
 
 `libunwind/1.2.1@marcokoch/stable`:
 This channel contains the latest stable package release, built
-from the [v1.2.1-0] tag in this repository.
+from the [v1.2.1-1] tag in this repository.
 Note that 'stable' refers to the packaging only. The package is always built
 from stable releases of libunwind.
 
@@ -128,5 +128,5 @@ please interact with the official GitHub mirror at <https://github.com/libunwind
 [issue tracker]: https://github.com/MarcoKoch/conan-libunwind/issues
 [libunwind README]: https://github.com/libunwind/libunwind/blob/master/README
 [v1.2.1]: https://github.com/MarcoKoch/conan-libunwind/tree/v1.2.1
-[v1.2.1-0]: https://github.com/MarcoKoch/conan-libunwind/tree/v1.2.1-0
+[v1.2.1-1]: https://github.com/MarcoKoch/conan-libunwind/tree/v1.2.1-1
 [master]: https://github.com/MarcoKoch/conan-libunwind/tree/master
